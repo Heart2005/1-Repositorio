@@ -1,0 +1,95 @@
+#1. Utilizando o OnlineGDB, pesquise e implemente um programa que escreva na tela “Olá Mundo!” em 3 linguagens de programação diferentes. Qual é o comando de saída de dados nestas 3 linguagens?
+
+
+1ª linguagem - Pascal
+
+program Hello;
+begin
+  writeln ('Hello World')
+end.
+
+2ª linguagem - Prolong
+
+main:-
+        process,
+        halt.
+
+process:-
+        writhe('Hello World').
+:- main.
+
+3ª linguagem - Kotlin
+fun main() {
+    println("Hello World")
+}
+
+
+#2. Escreva um programa em linguagem Python que solicite o nome do usuário e, em seguida, imprima uma mensagem de boas-vindas na tela, utilizando o nome fornecido.
+
+
+nome = input("coloque seu nome: ")
+
+print("Bem vindo "+nome)
+
+
+
+#3. Escreva um programa em Python que realize o seguinte procedimento:
+
+
+print("Qual é o verdadeiro nome do super-herói Batman?")
+print("a) Bruce Wayne")
+print("b) Clark Kent")
+print("c) Peter Parker")
+print("d) Tony Stark")
+print("e) Steve Rogers")
+
+resposta_usuario = input('Coloque sua resposta: ')
+
+resposta_correta = 'a'
+
+
+print('Você colocou a alternativa',resposta_usuario,'a resposta certa era:', resposta_correta)
+
+
+#4. Como poderíamos tornar o programa acima mais genérico, de maneira que pudéssemos registrar qualquer questão objetiva com 5 alternativas?
+
+
+def pegaPergunta():
+    pergunta = input("Digite sua pergunta: ")
+    return pergunta
+
+def pegaRespostas():
+    respostas = []
+    for i in range(5):
+        resposta = input("Digite uma resposta: ")
+        respostas.append(resposta)
+    return respostas
+
+def colocaResposta():
+    respostaCorreta = input("Digite qual das respostas é correta: ")
+    return respostaCorreta
+
+def verificaResposta(resposta, respostaCorreta):
+    if resposta == respostaCorreta:
+        return True
+    else:
+        return False
+
+def main():
+    pergunta = pegaPergunta()
+    respostas = pegaRespostas()
+
+    print("Pergunta:", pergunta)
+    print("Respostas:", respostas)
+
+    respostaCorreta = colocaResposta()
+
+    respostaUsuario = input("Qual a resposta correta? ")
+
+    if verificaResposta(respostaUsuario, respostaCorreta):
+        print("Você acertou!")
+    else:
+        print("Você errou!")
+
+if __name__ == "__main__":
+    main()
